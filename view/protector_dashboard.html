@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protector - Dashboard</title>
     
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/protector.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -29,6 +29,7 @@
             </div>
         </div>
     </header>
+
     <div class="dashboard-container">
         
         <nav class="sidebar">
@@ -51,41 +52,36 @@
                 <div class="stats-container">
                     
                     <div class="stat-card blue">
-                        <div class="stat-icon">
-                            <i class="fas fa-paw"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-paw"></i></div>
                         <div class="stat-info">
-                            <span class="stat-number">12</span>
+                            <span class="stat-number" id="stat-activos">...</span>
                             <span class="stat-label">Reportes Activos</span>
                         </div>
                     </div>
                     
                     <div class="stat-card green">
-                        <div class="stat-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="stat-info">
-                            <span class="stat-number">34</span>
-                            <span class="stat-label">Animales Rescatados</span>
+                            <span class="stat-number" id="stat-rescatados">...</span>
+                            <span class="stat-label">Reportes Cerrados</span>
                         </div>
                     </div>
 
                     <div class="stat-card orange">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
                         <div class="stat-info">
-                            <span class="stat-number">8</span>
-                            <span class="stat-label">Voluntarios Asignados</span>
+                            <span class="stat-number" id="stat-voluntarios">...</span>
+                            <span class="stat-label">Ayudas Ofrecidas</span>
                         </div>
                     </div>
 
                 </div>
-
-                </div>
+            </div>
         </main>
     </div>
     
+    <script src="../js/config.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>

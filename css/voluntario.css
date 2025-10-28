@@ -372,3 +372,37 @@
         min-width: 0;
     }
 }
+
+/* --- Estilos para Botones de Ayuda del Voluntario --- */
+
+/* Esto convierte las etiquetas <span class="tag"> en botones
+  cuando también tienen la clase .tag-action
+*/
+.tag-action {
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+    border-radius: 6px;
+    margin: 3px;
+}
+
+.tag-action:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Estilo para el botón cuando ya se ofreció la ayuda */
+.tag-action:disabled,
+.tag-action.disabled {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+    color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+}

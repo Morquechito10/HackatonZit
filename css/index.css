@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f9fc;
+    padding: 30px;
+}
+
+.login-illustration {
+    max-width: 100%;
+    height: auto;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1em;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #224abe;
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.1em;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #224abe;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #1a389a;
+}
+
+.create-account-link {
+    display: block;
+    margin-top: 30px;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.create-account-link:hover {
+    color: #224abe;
+}
+
+/* --- NUEVOS ESTILOS PARA EL MODAL --- */
+
+.modal-overlay {
+    /* Ocupa toda la pantalla y está oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    /* Clase que se añade con JS para mostrarlo */
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around; /* O 'center' si prefieres */
+    gap: 15px; /* Espacio entre botones */
+}
+
+.role-button {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #224abe;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-button[data-role="voluntario"] {
+    background-color: #224abe; /* Estilo primario */
+    color: #fff;
+}
+
+.role-button[data-role="protector"] {
+    background-color: #fff; /* Estilo secundario */
+    color: #224abe;
+}
+
+.role-button[data-role="voluntario"]:hover {
+    background-color: #1a389a;
+    border-color: #1a389a;
+}
+
+.role-button[data-role="protector"]:hover {
+    background-color: #f0f2f5;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8em;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        max-width: 450px;
+    }
+    /* ... (resto de estilos responsive) ... */
+}
+/* --- ESTILOS ADICIONALES PARA SIGNUP.HTML --- */
+
+/* Usamos la clase 'signup-page' que pusimos en el <body>
+  para que estas animaciones SÓLO se apliquen en signup.html
+*/
+.signup-page .right-panel {
+    /* El formulario (ahora a la izq) se desliza desde la izquierda */
+    animation: slideInFromLeft 0.6s ease-out;
+}
+
+.signup-page .left-panel {
+    /* La imagen (ahora a la der) se desliza desde la derecha */
+    animation: slideInFromRight 0.6s ease-out;
+}
+
+/* Ajustes para el formulario de registro, que es más largo
+*/
+.signup-page .input-group {
+    margin-bottom: 15px; /* Un poco menos de espacio entre campos */
+}
+
+.signup-page h2 {
+    margin-bottom: 25px; /* Espacio para el título */
+}
+
+.signup-page .login-link {
+    margin-top: 25px; /* Espacio para el enlace "Ya tengo cuenta" */
+}
+
+
+/* --- DEFINICIÓN DE LAS ANIMACIONES --- */
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

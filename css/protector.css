@@ -538,3 +538,78 @@
 .form-group textarea:invalid {
     border-color: var(--danger-color);
 }
+/* --- (Tu CSS existente va aquí arriba) --- */
+
+
+/* --- ¡NUEVO! Estilos para Validación --- */
+/* ... (los estilos de .error-message y .is-invalid van aquí) ... */
+.error-message {
+    display: none;
+    color: var(--danger-color); /* Rojo */
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 8px;
+}
+.form-group input.is-invalid,
+.form-group select.is-invalid,
+.form-group textarea.is-invalid {
+    border-color: var(--danger-color) !important; /* Borde rojo */
+    background-color: #feedeb !important; /* Fondo rosa pálido */
+}
+
+
+/* --- ¡NUEVO! Estilos para el botón de IA --- */
+
+/* Contenedor del label para alinear el texto y el botón */
+.label-with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo del botón de IA */
+.btn-secondary-ia {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 6px 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-secondary-ia:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-secondary-ia:disabled {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* El icono de spinner dentro del botón */
+.btn-secondary-ia .fa-spinner {
+    font-size: 1.1em;
+}
+
+/* --- ¡NUEVO! Estilos para mensajes de éxito --- */
+.success-message {
+    display: none;
+    background-color: #e6f7ee;
+    border: 1px solid #2ecc71;
+    color: #229a54;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
