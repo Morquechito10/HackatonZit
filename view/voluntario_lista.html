@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntario - Lista de Reportes</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/voluntario.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <img src="../assets/logo_RFS.png" alt="RFSOLUTIONS Logo" class="navbar-logo">
+            <span class="app-title">PetCenter</span>
+        </div>
+        
+        <div class="user-menu-container">
+            <button class="user-menu-btn">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name">Voluntario</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="user-dropdown-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#" class="logout-btn">Salir</a>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <a href="voluntario_lista.html" class="tab-btn active">
+                📋 Ver como Lista
+            </a>
+            <a href="voluntario_mapa.html" class="tab-btn">
+                🗺️ Ver en Mapa
+            </a>
+        </nav>
+        
+        <main class="content-area">
+            <div class="view-content" id="view-lista">
+                
+                <div class="report-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-dog fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="priority priority-critica">CRÍTICA</div>
+                        <h3>Perro en Avenida Principal</h3>
+                        <p class="help-needed">
+                            <span class="tag tag-vet">🏥 Atención Veterinaria</span>
+                            <span class="tag tag-trans">🚗 Transporte</span>
+                        </p>
+                        <p class="location">📍 Cerca del Parque Central</p>
+                        <button class="action-btn">¡Quiero Ayudar!</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-paw fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="priority priority-alta">ALTA</div>
+                        <h3>Cachorros en caja</h3>
+                        <p class="help-needed">
+                            <span class="tag tag-hogar">🏠 Hogar Temporal</span>
+                            <span class="tag tag-alim">💧 Alimento y Agua</span>
+                        </p>
+                        <p class="location">📍 Colonia Roma, Calle Ficticia 123</p>
+                        <button class="action-btn">¡Quiero Ayudar!</button>
+                    </div>
+                </div>
+
+                <div class="report-card">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-cat fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="priority priority-media">MEDIA</div>
+                        <h3>Gato en un árbol</h3>
+                        <p class="help-needed">
+                            <span class="tag tag-resc">🛡️ Rescate/Extracción</span>
+                        </p>
+                        <p class="location">📍 Unidad Habitacional "El Roble"</p>
+                        <button class="action-btn">¡Quiero Ayudar!</button>
+                    </div>
+                </div>
+                
+                <div class="report-card">
+                     <div class="card-image-placeholder">
+                        <i class="fa-solid fa-dog fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="priority priority-media">MEDIA</div>
+                        <h3>Perro con collar, desorientado</h3>
+                        <p class="help-needed">
+                            <span class="tag tag-hogar">🏠 Hogar Temporal</span>
+                        </p>
+                        <p class="location">📍 Mercado de Abastos</p>
+                        <button class="action-btn">¡Quiero Ayudar!</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

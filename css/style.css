@@ -1,0 +1,134 @@
+/* --- Estilos Globales (css/style.css) --- */
+
+:root {
+    /* (Tus variables de color no cambian) */
+    --primary-color: #4e73df;     
+    --secondary-color: #224abe;   
+    --secondary-hover: #1b3a99;  
+    --danger-color: #d93025;   
+    --warning-color: #f57c00;  
+    --info-color: #fbc02d;     
+    --light-gray: #f4f6f9;
+    --border-color: #ecf0f1;
+    --text-color: #333;       
+    --text-light: #777;
+    --white-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+}
+
+/* --- ESTILOS DEL NAVBAR (ACTUALIZADOS) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 85px; /* ¡MÁS ALTO! (Antes 75px) */
+    background-color: var(--white-color);
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Marca con logo y título */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.navbar-logo {
+    height: 55px; /* Ajustado a la nueva altura */
+    margin-right: 15px;
+
+    /* --- ¡FONDO NEGRO! --- */
+    background-color: #000; /* Fondo negro */
+    padding: 5px 10px;                       
+    border-radius: 8px;                      
+}
+
+.app-title {
+    color: var(--secondary-color);
+}
+
+/* Contenedor del menú de usuario (sin cambios) */
+.user-menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* (El resto de los estilos del menú de usuario no cambian) */
+.user-menu-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+.user-menu-btn:hover {
+    background-color: var(--secondary-hover);
+}
+.user-menu-btn .fas.fa-user-circle {
+    font-size: 1.4em;
+}
+.user-menu-btn .user-name {
+    font-weight: 500;
+}
+.user-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-width: 160px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.user-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.user-dropdown-menu a {
+    color: var(--text-color);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.user-dropdown-menu a:hover {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+}
+.user-dropdown-menu a.logout-btn {
+    color: var(--danger-color);
+    border-top: 1px solid var(--border-color);
+}
+.user-dropdown-menu a.logout-btn:hover {
+    background-color: #feedeb;
+    color: var(--danger-color);
+}

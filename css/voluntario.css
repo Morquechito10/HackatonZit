@@ -1,0 +1,227 @@
+/* --- Estilos para la Vista de Voluntario (css/voluntario.css) --- */
+
+/* --- Layout de Dashboard (Sin Cambios) --- */
+.dashboard-container {
+    display: flex;
+    height: calc(100vh - 65px); 
+}
+.sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 25px 15px;
+    border-right: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+.sidebar .tab-btn {
+    display: flex; 
+    align-items: center;
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none; 
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.sidebar .tab-btn:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+.sidebar .tab-btn.active {
+    background-color: var(--primary-color); /* <-- Usará tu nuevo color */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+.content-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto; 
+    background-color: var(--light-gray);
+}
+.view-content { 
+    display: block; 
+}
+
+/* --- VISTA #1: ESTILOS DE LISTA --- */
+#view-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.report-card {
+    flex-basis: 320px;
+    flex-grow: 1;      
+    background: #fff; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+.report-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+.card-image-placeholder {
+    height: 200px;
+    width: 100%;
+    background-color: var(--light-gray); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-image-placeholder i {
+    font-size: 6em; 
+    color: #cdd7e1; 
+}
+
+
+/* --- ¡CAMBIO 1! --- */
+.card-content {
+    padding: 20px;
+    /* Ya no necesitamos position: relative */
+}
+
+/* --- ¡CAMBIO 2! --- */
+.card-content h3 {
+    margin: 0 0 10px 0; /* <-- Quitamos el margen superior */
+    font-size: 1.4em;
+}
+
+/* --- ¡CAMBIO 3! --- */
+.priority {
+    /* Eliminamos position: absolute, top y right */
+    display: inline-block; /* <-- Lo hacemos un elemento de bloque-línea */
+    margin-bottom: 12px;  /* <-- Añadimos margen inferior */
+
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #fff;
+}
+/* Estas clases ahora usarán los nuevos colores azules */
+.priority-critica { background-color: var(--danger-color); }
+.priority-alta { background-color: var(--warning-color); }
+.priority-media { background-color: var(--info-color); }
+
+
+/* --- Tags de ayuda (Sin cambios, es bueno mantener sus colores) --- */
+.help-needed {
+    margin: 15px 0;
+}
+.tag {
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-right: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+.tag-vet   { background-color: #e74c3c; } /* Rojo original */
+.tag-trans { background-color: #3498db; } /* Azul info */
+.tag-hogar { background-color: #2ecc71; } /* Verde */
+.tag-alim  { background-color: #f39c12; } /* Naranja original */
+.tag-resc  { background-color: #34495e; } /* Azul oscuro */
+
+.location {
+    font-size: 0.95em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--secondary-color); /* <-- Usará tu azul oscuro principal */
+    color: #fff; /* <-- Texto blanco, ¡perfecto! */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.action-btn:hover {
+    background-color: var(--secondary-hover); /* <-- ¡AHORA SÍ! Usa el azul más oscuro para hover */
+    box-shadow: 0 4px 10px rgba(34, 74, 190, 0.3); /* Opcional: añade una sombra sutil */
+}
+
+
+
+/* --- VISTA #2: ESTILOS DE MAPA (Sin cambios) --- */
+#view-mapa {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 125px); 
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+.map-container {
+    flex: 3; 
+    background: #f0f0f0;
+}
+#map {
+    width: 100%;
+    height: 100%;
+}
+.report-panel {
+    flex: 1; 
+    min-width: 300px;
+    border-left: 2px solid var(--border-color);
+    overflow-y: auto; 
+}
+.report-panel h2 {
+    padding: 20px;
+    margin: 0;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky; 
+    top: 0;
+    background: #fff;
+    font-size: 1.4em;
+}
+.panel-item {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.panel-item:hover {
+    background: var(--light-gray);
+}
+.panel-item h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+}
+.panel-item p {
+    font-size: 0.9em;
+    margin: 0;
+    color: var(--text-light);
+}
+/* Bordes del panel lateral (usarán los nuevos azules) */
+.panel-item.priority-critica { border-left: 6px solid var(--danger-color); }
+.panel-item.priority-alta   { border-left: 6px solid var(--warning-color); }
+.panel-item.priority-media  { border-left: 6px solid var(--info-color); }
+
+.panel-item span {
+    font-weight: 700;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 8px;
+}
+/* Texto del panel lateral (usarán los nuevos azules) */
+.panel-item.priority-critica span { color: var(--danger-color); }
+.panel-item.priority-alta span   { color: var(--warning-color); }
+.panel-item.priority-media span  { color: var(--info-color); }

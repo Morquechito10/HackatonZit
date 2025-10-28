@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntario - Mapa de Reportes</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/voluntario.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <img src="../assets/logo_RFS.png" alt="RFSOLUTIONS Logo" class="navbar-logo">
+            <span class="app-title">PetCenter</span>
+        </div>
+        
+        <div class="user-menu-container">
+            <button class="user-menu-btn">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name">Voluntario</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="user-dropdown-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#" class="logout-btn">Salir</a>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <a href="voluntario_lista.html" class="tab-btn">
+                📋 Ver como Lista
+            </a>
+            <a href="voluntario_mapa.html" class="tab-btn active">
+                🗺️ Ver en Mapa
+            </a>
+        </nav>
+        
+        <main class="content-area">
+            <div class="view-content" id="view-mapa">
+                
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+
+                <div class="report-panel">
+                    <h2>Reportes Activos</h2>
+                    
+                    <div class="panel-item priority-critica">
+                        <h4>Perro en Avenida Principal</h4>
+                        <p>Necesita: Atención Veterinaria, Transporte</p>
+                        <span>CRÍTICA</span>
+                    </div>
+                    
+                    <div class="panel-item priority-alta">
+                        <h4>Cachorros en caja</h4>
+                        <p>Necesita: Hogar Temporal, Alimento</p>
+                        <span>ALTA</span>
+                    </div>
+
+                    <div class="panel-item priority-media">
+                        <h4>Gato en un árbol</h4>
+                        <p>Necesita: Rescate/Extracción</p>
+                        <span>MEDIA</span>
+                    </div>
+
+                    <div class="panel-item priority-media">
+                        <h4>Perro con collar, desorientado</h4>
+                        <p>Necesita: Hogar Temporal</p>
+                        <span>MEDIA</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/mapa.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+</html>
