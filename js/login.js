@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     voluntarioButton.addEventListener('click', () => {
         // Cambia esta ruta por la de voluntario
-        window.location.href = '/HackatonZit/view/voluntario_dashboard.html'; 
+        window.location.href = '/HackatonZit/view/voluntario_lista.html'; 
     });
     
     protectorButton.addEventListener('click', () => {

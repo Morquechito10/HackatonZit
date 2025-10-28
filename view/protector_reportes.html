@@ -30,6 +30,7 @@
             </div>
         </div>
     </header>
+
     <div class="dashboard-container">
         
         <nav class="sidebar">
@@ -52,61 +53,25 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Título</th>
                             <th>Prioridad</th>
                             <th>Estatus</th>
-                            <th>Ubicación (Coords.)</th>
+                            <th>Ayudas Recibidas</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="reportes-tbody">
                         <tr>
-                            <td><strong>REP-001</strong></td>
-                            <td><span class="tag-priority priority-critica">CRÍTICA</span></td>
-                            <td><span class="tag-status status-activo">ACTIVO</span></td>
-                            <td>20.675, -103.345</td>
-                            <td>
-                                <div class="action-btn-group">
-                                    <button class="action-btn btn-view" title="Visualizar"><i class="fas fa-eye"></i></button>
-                                    <button class="action-btn btn-edit" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="action-btn btn-delete" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                                </div>
-                            </td>
+                            <td colspan="6" style="text-align: center;">Cargando reportes...</td>
                         </tr>
-
-                        <tr>
-                            <td><strong>REP-002</strong></td>
-                            <td><span class="tag-priority priority-alta">ALTA</span></td>
-                            <td><span class="tag-status status-proceso">EN PROCESO</span></td>
-                            <td>20.671, -103.349</td>
-                            <td>
-                                <div class="action-btn-group">
-                                    <button class="action-btn btn-view" title="Visualizar"><i class="fas fa-eye"></i></button>
-                                    <button class="action-btn btn-edit" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="action-btn btn-delete" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><strong>REP-003</strong></td>
-                            <td><span class="tag-priority priority-media">MEDIA</span></td>
-                            <td><span class="tag-status status-resuelto">RESUELTO</span></td>
-                            <td>20.678, -103.340</td>
-                            <td>
-                                <div class="action-btn-group">
-                                    <button class="action-btn btn-view" title="Visualizar"><i class="fas fa-eye"></i></button>
-                                    <button class="action-btn btn-edit" title="Editar" disabled><i class="fas fa-pencil-alt"></i></button>
-                                    <button class="action-btn btn-delete" title="Eliminar" disabled><i class="fas fa-trash-alt"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
     
+    <script src="../js/config.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/gestionar_reportes.js"></script>
 </body>
 </html>

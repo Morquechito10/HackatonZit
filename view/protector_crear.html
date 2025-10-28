@@ -7,7 +7,6 @@
     
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/protector.css"> 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -32,6 +31,7 @@
             </div>
         </div>
     </header>
+
     <div class="dashboard-container">
         
         <nav class="sidebar">
@@ -67,47 +67,40 @@
 
                 <div class="form-column details-column">
                     <h3>2. Describe la situación</h3>
-                    
+
                     <div class="form-group">
-                        <label for="priority">Asignar Prioridad</label>
-                        <select id="priority" required>
-                            <option value="">-- Selecciona una --</option>
-                            <option value="media">Media</option>
-                            <option value="alta">Alta</option>
-                            <option value="critica">Crítica</option>
+                        <label for="titulo">Título del Reporte</label>
+                        <input type="text" id="titulo" placeholder="Ej: Perro atropellado en Av. Vallarta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_animal">Tipo de Animal</label>
+                        <select id="tipo_animal" required>
+                            <option value="">-- Selecciona uno --</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label>Ayuda Requerida (Selecciona una o más)</label>
                         <div class="checkbox-group" id="ayuda-checkboxes">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ayuda-vet" name="ayuda_tipo">
-                                <label for="ayuda-vet">Atención Veterinaria</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ayuda-trans" name="ayuda_tipo">
-                                <label for="ayuda-trans">Transporte</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ayuda-hogar" name="ayuda_tipo">
-                                <label for="ayuda-hogar">Hogar Temporal</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ayuda-alim" name="ayuda_tipo">
-                                <label for="ayuda-alim">Alimento y Agua</label>
-                            </div>
-                             <div class="checkbox-item">
-                                <input type="checkbox" id="ayuda-resc" name="ayuda_tipo">
-                                <label for="ayuda-resc">Rescate / Extracción</label>
-                            </div>
+                            <p>Cargando tipos de ayuda...</p>
                         </div>
                         <div class="error-message" id="error-ayuda">Debes seleccionar al menos un tipo de ayuda.</div>
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Descripción Adicional</label>
-                        <textarea id="description" rows="4" placeholder="Ej: Perro macho, color negro, parece tener una pata lastimada..." required minlength="10"></textarea>
+                        <label for="descripcion" class="label-with-action">
+                            <span>Descripción Adicional</span>
+                            <button type="button" class="btn-secondary-ia" id="btn-mejorar-ia">
+                                <i class="fas fa-magic"></i>
+                                <span id="ia-btn-text">Mejorar con IA</span>
+                                <i id="ia-spinner" class="fas fa-spinner fa-spin" style="display: none;"></i>
+                            </button>
+                        </label>
+                        <textarea id="descripcion" rows="4" placeholder="Ej: Macho, color negro, parece tener una pata lastimada..." required minlength="10"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -115,17 +108,16 @@
                         <input type="file" id="photo" accept="image/*">
                     </div>
 
-                    <button type="submit" class="submit-btn">
+                    <button type="submit" class="submit-btn" id="submit-btn">
                         <i class="fas fa-check-circle"></i> Crear Reporte
                     </button>
+                    <div id="form-success" class="success-message" style="display: none;">¡Reporte creado con éxito!</div>
                 </div>
             </form>
         </main>
     </div>
     
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <script src="../js/config.js"></script>
     <script src="../js/navbar.js"></script>
-    <script src="../js/crear_reporte.js"></script>
-    <script src="../js/form_validation.js"></script>
-</body>
+    <script src="../js/crear_reporte.js"></script> </body>
 </html>
