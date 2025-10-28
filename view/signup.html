@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Cuenta</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="tailwind.config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-sans">
+    <div class="flex w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden flex-col md:flex-row">
+        <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 animate-slideInFromLeft">
+            <div class="w-full max-w-md text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Crear Cuenta</h2>
+
+                <form id="signupForm">
+                    <div class="relative mb-4">
+                        <i class="fa fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="text" placeholder="Nombre(s)"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue"
+                            required />
+                    </div>
+                    <div class="relative mb-4">
+                        <i class="fa fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="text" placeholder="Apellido Paterno"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue"
+                            required />
+                    </div>
+                    <div class="relative mb-4">
+                        <i class="fa fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="text" placeholder="Apellido Materno"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue" />
+                    </div>
+                    <div class="relative mb-4">
+                        <i class="fa fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="email" placeholder="Correo Electrónico"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue"
+                            required />
+                    </div>
+                    <div class="relative mb-4">
+                        <i class="fa fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="password" placeholder="Contraseña"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue"
+                            required />
+                    </div>
+                    <div class="relative mb-4">
+                        <i class="fa fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i><input
+                            type="tel" placeholder="Teléfono"
+                            class="w-full py-2.5 pl-12 pr-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-custom-blue" />
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3 mt-4 bg-blue-700 text-white font-semibold rounded-full hover:bg-blue-800 transition-colors duration-300">
+                        REGISTRARSE
+                    </button>
+
+                    <a href="../index.html"
+                        class="block mt-6 text-gray-500 hover:text-custom-blue transition-colors duration-300">
+                        ¿Ya tienes una cuenta? Inicia Sesión &rarr;
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 bg-gray-50 animate-slideInFromRight">
+            <img src="../assets/imgLogin.png" alt="Ilustración de Registro" class="max-w-full h-auto" />
+        </div>
+    </div>
+</body>
+
+</html>
