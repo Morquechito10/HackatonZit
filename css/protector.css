@@ -1,0 +1,540 @@
+/* --- Estilos para la Vista de Protector (css/protector.css) --- */
+
+/* --- Layout de Dashboard (Sin Cambios) --- */
+.dashboard-container {
+    display: flex;
+    height: calc(100vh - 85px); 
+}
+.sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 25px 15px;
+    border-right: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+.sidebar .tab-btn {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none; 
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.sidebar .tab-btn:hover {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+}
+.sidebar .tab-btn.active {
+    background-color: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+.content-area {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto; 
+    background-color: var(--light-gray);
+}
+.view-content { 
+    display: block; 
+}
+
+/* --- Estilos para el Dashboard de Estadísticas (Sin Cambios) --- */
+.content-area h2 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.stat-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    flex-grow: 1;
+    min-width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+.stat-icon {
+    font-size: 2.5em;
+    margin-right: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.stat-info .stat-number {
+    font-size: 2em;
+    font-weight: 700;
+    display: block;
+    color: var(--text-color);
+}
+.stat-info .stat-label {
+    font-size: 1em;
+    color: var(--text-light);
+}
+.stat-card.blue .stat-icon { background-color: var(--primary-color); }
+.stat-card.green .stat-icon { background-color: #2ecc71; }
+.stat-card.orange .stat-icon { background-color: var(--warning-color); }
+
+
+/* --- Estilos para el Formulario de Creación (¡ACTUALIZADOS!) --- */
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+.form-column {
+    flex: 1; 
+    min-width: 300px;
+}
+.form-column h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--border-color);
+}
+#report-map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    z-index: 0;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+/* --- ¡CAMPOS DE FORMULARIO ACTUALIZADOS! --- */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px; /* Más padding */
+    border: 2px solid var(--border-color); /* Borde más suave y grueso */
+    border-radius: 8px; /* Más redondeado */
+    font-size: 1em;
+    font-family: inherit;
+    background-color: var(--light-gray); /* Fondo suave */
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    -webkit-appearance: none; /* Quita estilos nativos en iOS/Safari */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Borde azul al enfocar */
+    background-color: #fff; /* Fondo blanco al enfocar */
+}
+
+/* --- ¡SELECT PERSONALIZADO (FLECHA)! --- */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+.form-group input[type="text"][disabled],
+.form-group textarea[disabled] {
+    background-color: var(--border-color); /* Fondo más oscuro para deshabilitado */
+    cursor: not-allowed;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* --- ¡BOTÓN DE ARCHIVO ACTUALIZADO! --- */
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed var(--border-color);
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    font-size: 0.9em;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.form-group input[type="file"]:hover {
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 15px;
+    border: none;
+    background: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color .2s ease;
+}
+.form-group input[type="file"]::file-selector-button:hover {
+    background: var(--secondary-color);
+}
+
+
+/* --- ¡CHECKBOXES PERSONALIZADOS! --- */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Más espacio */
+}
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0; /* El gap lo da el label */
+}
+.checkbox-item input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+.checkbox-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+    font-weight: 500;
+    margin: 0; /* Resetea margen */
+}
+/* La caja del checkbox */
+.checkbox-item label::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border-color);
+    background-color: var(--light-gray);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+/* Estilo cuando está seleccionado */
+.checkbox-item input[type="checkbox"]:checked + label::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    /* Icono de Check (SVG incrustado) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.962.316a1.2 1.2 0 011.697 1.697l-7.25 7.25a1.2 1.2 0 01-1.697 0L.316 3.867A1.2 1.2 0 112.013 2.17l3.14 3.14 6.809-6.809z' fill='%23fff'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+/* Estilo al enfocar */
+.checkbox-item input[type="checkbox"]:focus-visible + label::before {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+
+/* --- Botón de Envío (Sin Cambios) --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.submit-btn:hover {
+    background-color: var(--secondary-hover);
+    box-shadow: 0 4px 10px rgba(34, 74, 190, 0.3);
+}
+
+/* --- Estilos para la Tabla de Reportes (Sin Cambios) --- */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+.report-table th,
+.report-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: middle;
+}
+.report-table th {
+    background-color: var(--light-gray);
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+.report-table td {
+    color: var(--text-color);
+}
+.report-table tbody tr:hover {
+    background-color: #fcfcfc;
+}
+.tag-priority,
+.tag-status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: #fff;
+    display: inline-block;
+}
+.tag-status.status-activo { background-color: var(--danger-color); }
+.tag-status.status-proceso { background-color: var(--warning-color); }
+.tag-status.status-resuelto { background-color: #2ecc71; }
+.action-btn-group {
+    display: flex;
+    gap: 10px;
+}
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+.action-btn:hover {
+    background-color: var(--light-gray);
+}
+.action-btn.btn-view { color: var(--primary-color); }
+.action-btn.btn-edit { color: var(--warning-color); }
+.action-btn.btn-delete { color: var(--danger-color); }
+.action-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.action-btn:disabled:hover {
+    background-color: transparent;
+}
+
+/* --- Estilos para el Spinner (Sin Cambios) --- */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+@keyframes spin {
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+/* --- =================================== --- */
+/* ---        MEDIA QUERIES (RESIZE)       --- */
+/* --- =================================== --- */
+
+/* --- Para Tablets y pantallas medianas (<= 1024px) --- */
+@media (max-width: 1024px) {
+    
+    .content-area {
+        padding: 20px;
+    }
+
+    /* El formulario apila las columnas antes */
+    .form-container {
+        flex-direction: column;
+    }
+
+    /* Los checkboxes pasan a una sola columna */
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajusta el padding del navbar */
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .sidebar {
+        width: 220px; /* Sidebar un poco más angosta */
+    }
+
+    .sidebar .tab-btn {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+
+/* --- Para Móviles (<= 768px) --- */
+@media (max-width: 768px) {
+
+    /* --- 1. Ajustes del Navbar --- */
+    .navbar {
+        padding: 0 15px;
+        height: 70px; /* Un poco más bajo */
+    }
+
+    /* Oculta el título "PetCenter", deja solo el logo */
+    .navbar-brand .app-title {
+        display: none;
+    }
+    
+    .navbar-logo {
+        height: 40px;
+    }
+
+    /* Oculta el nombre, deja solo el icono de usuario */
+    .user-menu-btn .user-name {
+        display: none;
+    }
+
+    .user-menu-btn {
+        padding: 10px 14px; /* Botón más pequeño */
+    }
+
+    /* --- 2. Transformación del Layout --- */
+
+    /* Apila el sidebar y el contenido */
+    .dashboard-container {
+        flex-direction: column;
+        height: auto; /* Altura automática */
+    }
+
+    /* Convierte el Sidebar en una barra de pestañas horizontal */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        display: flex; /* Lo hace horizontal */
+        flex-wrap: wrap; /* Permite que baje si no cabe */
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .sidebar .tab-btn {
+        width: auto; /* Ancho automático */
+        flex-grow: 1; /* Ocupan espacio disponible */
+        text-align: center;
+        font-size: 0.9em;
+        padding: 12px 10px;
+        margin: 5px;
+    }
+    
+    /* --- 3. Ajustes del Contenido --- */
+    .content-area {
+        padding: 15px;
+    }
+    
+    .content-area h2 {
+        font-size: 1.5em;
+    }
+
+    /* Tarjetas de estadísticas a 1 columna */
+    .stats-container {
+        gap: 15px;
+    }
+
+    /* Formulario a 1 columna (ya lo hace el flex-wrap) */
+    .form-container {
+        padding: 15px;
+    }
+    
+    .form-column h3 {
+        font-size: 1.2em;
+    }
+    
+    /* Asegura que el mapa no sea gigante */
+    #report-map {
+        height: 300px; 
+    }
+
+    /* Botones de la tabla de reportes */
+    .report-table {
+        min-width: 0; /* Deja que el scroll se encargue */
+    }
+
+    .report-table th,
+    .report-table td {
+        padding: 12px 10px; /* Menos padding */
+    }
+}
+
+/* --- (Tu CSS existente va aquí arriba) --- */
+
+
+/* --- ¡NUEVO! Estilos de Validación --- */
+
+/* Mensaje de error (oculto por defecto) */
+.error-message {
+    display: none;
+    color: var(--danger-color); /* Rojo */
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* Estilo para campos inválidos (del JS) */
+.form-group textarea.is-invalid {
+    border-color: var(--danger-color) !important; /* Borde rojo */
+    background-color: #feedeb !important; /* Fondo rosa pálido */
+}
+
+/* Estilo para campos inválidos (del HTML 'required') */
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: var(--danger-color);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protector - Dashboard</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/protector.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-brand">
+            <img src="../assets/logo_RFS.png" alt="RFSOLUTIONS Logo" class="navbar-logo">
+            <span class="app-title">PetCenter</span>
+        </div>
+        
+        <div class="user-menu-container">
+            <button class="user-menu-btn">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name">Protector</span>
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="user-dropdown-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#" class="logout-btn">Salir</a>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        
+        <nav class="sidebar">
+            <a href="protector_dashboard.html" class="tab-btn active">
+                <i class="fas fa-chart-line"></i> Estadísticas
+            </a>
+            <a href="protector_crear.html" class="tab-btn">
+                <i class="fas fa-plus-circle"></i> Crear Reporte
+            </a>
+            <a href="protector_reportes.html" class="tab-btn">
+                <i class="fas fa-edit"></i> Gestionar Reportes
+            </a>
+        </nav>
+        
+        <main class="content-area">
+            <div class="view-content" id="view-dashboard">
+                
+                <h2>Dashboard de Estadísticas</h2>
+                
+                <div class="stats-container">
+                    
+                    <div class="stat-card blue">
+                        <div class="stat-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Reportes Activos</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card green">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">34</span>
+                            <span class="stat-label">Animales Rescatados</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Voluntarios Asignados</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+        </main>
+    </div>
+    
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

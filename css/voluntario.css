@@ -1,10 +1,11 @@
 /* --- Estilos para la Vista de Voluntario (css/voluntario.css) --- */
 
-/* --- Layout de Dashboard (Sin Cambios) --- */
+/* --- Layout de Dashboard (Refactorizado) --- */
 .dashboard-container {
     display: flex;
-    height: calc(100vh - 65px); 
+    height: calc(100vh - 85px); /* Altura del navbar */
 }
+
 .sidebar {
     width: 250px;
     background: #fff;
@@ -12,9 +13,11 @@
     border-right: 2px solid var(--border-color);
     flex-shrink: 0;
 }
+
 .sidebar .tab-btn {
     display: flex; 
     align-items: center;
+    gap: 10px; /* Espacio para el icono */
     width: 100%;
     padding: 18px 20px;
     margin-bottom: 10px;
@@ -29,35 +32,51 @@
     cursor: pointer;
     transition: all 0.2s ease;
 }
+
 .sidebar .tab-btn:hover {
     background-color: var(--light-gray);
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
+
 .sidebar .tab-btn.active {
-    background-color: var(--primary-color); /* <-- Usará tu nuevo color */
+    background-color: var(--secondary-color);
     color: #fff;
     box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
 }
+
 .content-area {
     flex: 1;
     padding: 30px;
     overflow-y: auto; 
     background-color: var(--light-gray);
 }
+
 .view-content { 
     display: block; 
 }
 
-/* --- VISTA #1: ESTILOS DE LISTA --- */
+/* Título opcional */
+.content-area h2 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* --- VISTA #1: ESTILOS DE LISTA (Tarjetas) --- */
+/* (Sin cambios) */
+/* --- VISTA #1: ESTILOS DE LISTA (Tarjetas) --- */
 #view-lista {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
 }
+
 .report-card {
     flex-basis: 320px;
     flex-grow: 1;      
-    background: #fff; 
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     overflow: hidden;
@@ -68,69 +87,87 @@
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
+
+/* --- (Fragmento de css/voluntario.css) --- */
+
+/* --- ¡SECCIÓN ACTUALIZADA! --- */
 .card-image-placeholder {
     height: 200px;
     width: 100%;
+    /* Este color se verá en el espacio sobrante (letterboxing) */
     background-color: var(--light-gray); 
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    background-image: url('../assets/wirop_curando.png');
+    
+    /* --- ¡ESTE ES EL CAMBIO! --- */
+    background-size: contain; /* Antes 'cover' */
+    
+    background-position: center;
+    background-repeat: no-repeat;
 }
+/* Oculta el icono de Font Awesome si hay imagen de fondo */
 .card-image-placeholder i {
-    font-size: 6em; 
-    color: #cdd7e1; 
+    display: none; 
 }
+/* --- FIN DE SECCIÓN ACTUALIZADA --- */
 
+/* --- (El resto de tu archivo css/voluntario.css continúa...) --- */
+/* --- FIN DE SECCIÓN ACTUALIZADA --- */
 
-/* --- ¡CAMBIO 1! --- */
 .card-content {
     padding: 20px;
-    /* Ya no necesitamos position: relative */
 }
-
-/* --- ¡CAMBIO 2! --- */
 .card-content h3 {
-    margin: 0 0 10px 0; /* <-- Quitamos el margen superior */
+    margin: 0 0 10px 0;
     font-size: 1.4em;
 }
-
-/* --- ¡CAMBIO 3! --- */
 .priority {
-    /* Eliminamos position: absolute, top y right */
-    display: inline-block; /* <-- Lo hacemos un elemento de bloque-línea */
-    margin-bottom: 12px;  /* <-- Añadimos margen inferior */
-
+    display: inline-block;
+    margin-bottom: 12px;
     padding: 6px 10px;
     border-radius: 6px;
     font-size: 0.9em;
     font-weight: 700;
     color: #fff;
 }
-/* Estas clases ahora usarán los nuevos colores azules */
 .priority-critica { background-color: var(--danger-color); }
 .priority-alta { background-color: var(--warning-color); }
 .priority-media { background-color: var(--info-color); }
+/* --- (Fragmento de css/voluntario.css) --- */
 
+/* ... (Los estilos de .priority-media van aquí arriba) ... */
 
-/* --- Tags de ayuda (Sin cambios, es bueno mantener sus colores) --- */
 .help-needed {
     margin: 15px 0;
 }
+
+/* --- ¡SECCIÓN ACTUALIZADA! --- */
 .tag {
-    color: #fff;
+    /* Color de texto gris oscuro */
+    color: #555; 
+    /* Fondo gris claro (no tan oscuro) */
+    background-color: #eeeeee; 
+    
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.8em;
-    font-weight: 500;
+    font-weight: 600; /* Texto un poco más grueso */
     margin-right: 5px;
     display: inline-block;
     margin-top: 5px;
 }
-.tag-vet   { background-color: #e74c3c; } /* Rojo original */
-.tag-trans { background-color: #3498db; } /* Azul info */
-.tag-hogar { background-color: #2ecc71; } /* Verde */
-.tag-alim  { background-color: #f39c12; } /* Naranja original */
-.tag-resc  { background-color: #34495e; } /* Azul oscuro */
+
+/* (Eliminamos los fondos de color específicos) */
+.tag-vet   { /* background-color: #e74c3c; */ }
+.tag-trans { /* background-color: #3498db; */ }
+.tag-hogar { /* background-color: #2ecc71; */ }
+.tag-alim  { /* background-color: #f39c12; */ }
+.tag-resc  { /* background-color: #34495e; */ }
+/* --- FIN DE SECCIÓN ACTUALIZADA --- */
+
 
 .location {
     font-size: 0.95em;
@@ -138,12 +175,12 @@
     margin-bottom: 20px;
 }
 
-
+/* ... (El resto de tu archivo continúa) ... */
 .action-btn {
     width: 100%;
     padding: 12px;
-    background-color: var(--secondary-color); /* <-- Usará tu azul oscuro principal */
-    color: #fff; /* <-- Texto blanco, ¡perfecto! */
+    background-color: var(--secondary-color);
+    color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -152,17 +189,15 @@
     transition: background-color 0.2s ease;
 }
 .action-btn:hover {
-    background-color: var(--secondary-hover); /* <-- ¡AHORA SÍ! Usa el azul más oscuro para hover */
-    box-shadow: 0 4px 10px rgba(34, 74, 190, 0.3); /* Opcional: añade una sombra sutil */
+    background-color: var(--secondary-hover);
 }
 
 
-
-/* --- VISTA #2: ESTILOS DE MAPA (Sin cambios) --- */
+/* --- VISTA #2: ESTILOS DE MAPA (Mapa y Panel) --- */
 #view-mapa {
     display: flex;
     width: 100%;
-    height: calc(100vh - 125px); 
+    height: calc(100vh - 85px - 60px); 
     border-radius: 12px;
     overflow: hidden;
     background: #fff;
@@ -177,51 +212,163 @@
     width: 100%;
     height: 100%;
 }
+
+/* --- ¡NUEVO! Icono de ubicación del usuario en el mapa --- */
+.user-location-icon {
+    background: none;
+    border: none;
+    /* Centra el popup de Leaflet sobre el icono */
+    margin-left: -15px !important;
+    margin-top: -30px !important;
+}
+
+/* --- ¡PANEL DERECHO REDISEÑADO! --- */
 .report-panel {
     flex: 1; 
     min-width: 300px;
     border-left: 2px solid var(--border-color);
     overflow-y: auto; 
+    background: #fcfcfc; /* Fondo general sutil */
 }
+/* Título del panel rediseñado */
 .report-panel h2 {
-    padding: 20px;
+    padding: 20px 20px 15px 20px;
     margin: 0;
+    font-size: 1.4em;
+    color: var(--text-color);
+    background: #fff; /* Fondo blanco para el título */
     border-bottom: 2px solid var(--border-color);
     position: sticky; 
     top: 0;
-    background: #fff;
-    font-size: 1.4em;
 }
+/* Items del panel rediseñados */
 .panel-item {
-    padding: 20px;
+    padding: 18px 20px;
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: background-color 0.2s ease;
+    background: #fff; /* Fondo blanco para cada item */
 }
 .panel-item:hover {
-    background: var(--light-gray);
+    background-color: var(--light-gray); /* Hover sutil */
 }
 .panel-item h4 {
     margin: 0 0 8px 0;
     font-size: 1.1em;
+    color: var(--text-color); /* Texto principal oscuro */
 }
 .panel-item p {
     font-size: 0.9em;
     margin: 0;
-    color: var(--text-light);
+    color: var(--text-light); /* Texto secundario gris */
 }
-/* Bordes del panel lateral (usarán los nuevos azules) */
+/* Mantenemos los bordes de color, son clave */
 .panel-item.priority-critica { border-left: 6px solid var(--danger-color); }
 .panel-item.priority-alta   { border-left: 6px solid var(--warning-color); }
 .panel-item.priority-media  { border-left: 6px solid var(--info-color); }
 
+/* Texto de prioridad (span) ahora es NEUTRAL */
 .panel-item span {
     font-weight: 700;
     font-size: 0.9em;
     display: block;
     margin-top: 8px;
+    color: var(--text-light); /* ¡Color gris neutral! */
 }
-/* Texto del panel lateral (usarán los nuevos azules) */
-.panel-item.priority-critica span { color: var(--danger-color); }
-.panel-item.priority-alta span   { color: var(--warning-color); }
-.panel-item.priority-media span  { color: var(--info-color); }
+/* (Reglas de color para el span eliminadas) */
+
+
+/* --- =================================== --- */
+/* ---        MEDIA QUERIES (RESIZE)       --- */
+/* --- =================================== --- */
+
+/* --- Para Tablets (<= 1024px) --- */
+@media (max-width: 1024px) {
+    .content-area {
+        padding: 20px;
+    }
+    .navbar {
+        padding: 0 20px;
+    }
+    .sidebar {
+        width: 220px;
+    }
+    .sidebar .tab-btn {
+        font-size: 1em;
+        padding: 15px;
+    }
+    #view-mapa {
+        flex-direction: column;
+        height: auto;
+    }
+    .map-container {
+        flex: none;
+        height: 400px;
+    }
+    .report-panel {
+        flex: none;
+        min-width: 0;
+        border-left: none;
+        border-top: 2px solid var(--border-color);
+    }
+}
+
+/* --- Para Móviles (<= 768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        height: 70px;
+    }
+    .navbar-brand .app-title {
+        display: none;
+    }
+    .navbar-logo {
+        height: 40px;
+    }
+    .user-menu-btn .user-name {
+        display: none;
+    }
+    .user-menu-btn {
+        padding: 10px 14px;
+    }
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+    .sidebar .tab-btn {
+        width: auto;
+        flex-grow: 1;
+        text-align: center;
+        font-size: 0.9em;
+        padding: 12px 10px;
+        margin: 5px;
+    }
+    .content-area {
+        padding: 15px;
+    }
+    .content-area h2 {
+        font-size: 1.5em;
+    }
+    .report-card {
+        flex-basis: 100%;
+    }
+    #view-mapa {
+        height: auto;
+    }
+    .map-container {
+        height: 300px;
+    }
+    .report-panel {
+        min-width: 0;
+    }
+}
